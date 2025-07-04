@@ -5,15 +5,58 @@
 package com.mycompany.csc325_oop_designreview_lab;
 
 /**
- *
+ * Student class that extends Human class
+ * Represents a student with basic human properties plus academic information
  * @author MoaathAlrajab
  */
-public class Student {
-	// ToDo 1: Make this class a child of Human
+public class Student extends Human {
 
-	// ToDo 2: Fix the resulting errors
+    // GPA field to store the student's grade point average
+    private double gpa;
+    // Address field for the student
+    private String address;
 
-	// ToDo 3: Add a field for GPA and create a setter and a getter
-	
-	// ToDo 4: Add comments to your code
+    public Student(String name, short age) {
+        // Call the parent class (Human) constructor
+        super(name, age);
+        this.gpa = 0.0; // Default GPA
+    }
+
+    public Student(String name, short age, double gpa) {
+        // Call the parent class (Human) constructor
+        super(name, age);
+        this.gpa = gpa;
+    }
+
+    @Override
+    public String getAddress() {
+        return address;
+    }
+
+    @Override
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public double getGpa() {
+        return gpa;
+    }
+
+    public void setGpa(double gpa) {
+        this.gpa = gpa;
+    }
+
+    /**
+     * Override toString method to provide a string representation of the Student
+     * @return String representation of the student
+     */
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + getName() + '\'' +
+                ", age=" + getAge() +
+                ", gpa=" + gpa +
+                ", address='" + address + '\'' +
+                '}';
+    }
 }
